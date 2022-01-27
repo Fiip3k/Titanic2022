@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Filip/OneDrive/Pulpit/Python/Titanic2021/mlruns/0/c9de022c8485492ca6089f627a703554/artifacts
+end_time: 1643275710582
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: c9de022c8485492ca6089f627a703554
+run_uuid: c9de022c8485492ca6089f627a703554
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1643275696122
+status: 3
+tags: []
+user_id: Filip
