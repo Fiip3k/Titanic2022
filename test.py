@@ -119,8 +119,8 @@ train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.2)
 # %% Create XGB model
 mlflow.start_run()
 
-epochs = 1000
-lr = 0.01
+epochs = 20
+lr = 0.5
 n_jobs = 6
 
 params = {
