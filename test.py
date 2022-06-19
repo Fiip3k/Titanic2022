@@ -3,6 +3,7 @@
 '''
 
 # %% Imports
+import analyzer
 from xgboost import XGBClassifier
 from sklearn.model_selection import cross_val_score
 from sklearn.metrics import log_loss
@@ -15,9 +16,10 @@ import mlflow
 import mlflow.xgboost
 from sklearn.preprocessing import MinMaxScaler
 
+import data_loader
+
 # %% Load data
-train = pd.read_csv(r"CSV\train.csv")
-test = pd.read_csv(r"CSV\test.csv")
+train, test = data_loader.load_data()
 
 # %% Create X DataFrame
 X = pd.DataFrame()
@@ -105,6 +107,11 @@ norm.columns = column_names
 X["Age"] = norm["Age"]
 X["Fare"] = norm["Fare"]
 
+# %% train TEMP dropna()
+X["Survived"] = y
+X.dropna(inplace=True)
+X.isna().sum()
+y = X.pop("Survived")
 
 # %% SMOTE resample
 X, y = SMOTE().fit_resample(X, y)
@@ -142,6 +149,9 @@ model.fit(train_X, train_y,
 predictions = model.predict(test_X)
 predictions.round()
 print("Predictions ready.")
+
+analyzer.print_report(test_y, predictions)
+analyzer.print_confusion_matrix(test_y, predictions)
 
 # %% Cross validation mean score
 
