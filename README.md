@@ -1,6 +1,8 @@
 # Titanic2022
 Another try at Kaggle Titanic Challenge
 
+tl;dr - just check test.py
+
 Files description:
 
 - test.py - my data manipulation and model
