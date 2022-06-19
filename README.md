@@ -9,3 +9,8 @@ Files description:
 - data_preprocessor.py - scaling + future augmentation
 - classifier.py - xgboost classifier with grid search
 - analyzer.py - analyze data (SMOTE needed?)
+
+TODO
+- apply MLFlow, SMOTE from old
+- feature selection
+- perhaps pipelines if the code gets dirty
